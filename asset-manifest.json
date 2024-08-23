@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/foreman-project/static/css/main.e2eddcd8.css",
+    "main.js": "/foreman-project/static/js/main.5d4d85f7.js",
+    "static/js/453.33effc06.chunk.js": "/foreman-project/static/js/453.33effc06.chunk.js",
+    "static/media/transporters.jpg": "/foreman-project/static/media/transporters.ba113c39cb0695ff0313.jpg",
+    "static/media/welder.jpg": "/foreman-project/static/media/welder.9bc66337f444dbc42236.jpg",
+    "static/media/mechanic.jpg": "/foreman-project/static/media/mechanic.5b3f0b51caa7824464fb.jpg",
+    "static/media/driver.jpg": "/foreman-project/static/media/driver.252cdd7a9ac88f050d16.jpg",
+    "static/media/plumber.jpg": "/foreman-project/static/media/plumber.aaa2a9099b00b307dbe7.jpg",
+    "static/media/electrcian.jpg": "/foreman-project/static/media/electrcian.ea780d8d90ef0872fa0c.jpg",
+    "static/media/chef.jpg": "/foreman-project/static/media/chef.3ad74efacfb282b09bb6.jpg",
+    "static/media/welder-logo.jpg": "/foreman-project/static/media/welder-logo.b398f2667972eeb9f5f3.jpg",
+    "static/media/hero.jpg": "/foreman-project/static/media/hero.dbfbae04708ec41580e7.jpg",
+    "static/media/domesticworker-logo.jpg": "/foreman-project/static/media/domesticworker-logo.804a205fd7baa384a860.jpg",
+    "static/media/electrican-logo (1).png": "/foreman-project/static/media/electrican-logo (1).e3dda706a75677daa774.png",
+    "static/media/Drivers=logos.png": "/foreman-project/static/media/Drivers=logos.245c728c98c7e278df32.png",
+    "static/media/worker-logo.jpg": "/foreman-project/static/media/worker-logo.6550a9580814d227488a.jpg",
+    "static/media/foremans.png": "/foreman-project/static/media/foremans.d9acd2f0353705d87638.png",
+    "static/media/Mechanic-logos.png": "/foreman-project/static/media/Mechanic-logos.229f7874b20cf98df570.png",
+    "static/media/transporter-logos.png": "/foreman-project/static/media/transporter-logos.7e8dc0fe6e8e724887eb.png",
+    "index.html": "/foreman-project/index.html",
+    "main.e2eddcd8.css.map": "/foreman-project/static/css/main.e2eddcd8.css.map",
+    "main.5d4d85f7.js.map": "/foreman-project/static/js/main.5d4d85f7.js.map",
+    "453.33effc06.chunk.js.map": "/foreman-project/static/js/453.33effc06.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2eddcd8.css",
+    "static/js/main.5d4d85f7.js"
+  ]
+}
