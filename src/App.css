@@ -1,0 +1,9 @@
+/* Apply this to the body or main container */
+body {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Vibrant pink-orange to peach gradient */
+    color: #333; /* Dark text for good readability */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  

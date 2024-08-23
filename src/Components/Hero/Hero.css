@@ -1,0 +1,42 @@
+/* General Hero Styles */
+.hero-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .hero-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ff6f61; /* Matches the theme of the navbar */
+  }
+  
+  .hero-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hero-container {
+      padding: 30px 15px;
+    }
+  
+    .hero-container h1 {
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-container {
+      padding: 20px 10px;
+    }
+  
+    .hero-container h1 {
+      font-size: 24px;
+    }
+  }
+  

@@ -1,0 +1,159 @@
+/* General Navbar Styles */
+.navsection {
+  width: 100%;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Premium gradient */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.title h2 {
+  color: #ffffff; /* White color for text */
+  font-size: 24px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  padding: 8px;
+  border-radius: 20px;
+  border: none;
+  width: 200px;
+  background-color: #ffffff; /* White background for input */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.user, .favorites, .detailes {
+  color: #ffffff; /* White color for text */
+  margin: 10px;
+  cursor: pointer;
+}
+
+.user h3, .favorites h2, .detailes h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Subnav Styles */
+.subnav {
+  background: linear-gradient(135deg, #feb47b, #ff7e5f); /* Gradient for subnav */
+  padding: 10px;
+}
+
+.sub-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sub-nav li {
+  display: flex;
+  flex-direction: column; /* Stack image above text */
+  align-items: center;
+  color: #ffffff; /* White color for text */
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Add transition for hover effects */
+  flex: 1 1 30%;
+  text-align: center;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.sub-nav li img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px; /* Space between image and text */
+}
+
+.sub-nav li:hover {
+  background-color: #ff4a3c; /* Slightly darker background on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .title h2 {
+    font-size: 20px;
+  }
+
+  .search input {
+    width: 150px;
+  }
+
+  .user h3, .favorites h2, .detailes h3 {
+    font-size: 16px;
+  }
+
+  .sub-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sub-nav li {
+    flex: 1 1 45%; /* Two items per row on smaller screens */
+    padding: 10px;
+  }
+
+  .sub-nav li img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search input {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .user, .favorites, .detailes {
+    width: 100%;
+    text-align: left;
+    margin: 5px 0;
+  }
+
+  .subnav {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f); /* Gradient for mobile */
+    padding: 15px;
+  }
+
+  .sub-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .sub-nav li {
+    flex: 1 1 30%; /* Three items per row on the smallest screens */
+    margin-bottom: 10px;
+    padding: 10px;
+    justify-content: center;
+    background-color: #ff6f61; /* Background color for list items */
+  }
+
+  .sub-nav li img {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 5px;
+  }
+
+  .sub-nav li:hover {
+    background-color: #ff4a3c; /* Slightly darker background on hover */
+  }
+}

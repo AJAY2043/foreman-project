@@ -1,0 +1,108 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  color: #2c3e50;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar styles */
+.Navbar {
+  background-color: #1abc9c;
+  padding: 1rem;
+  color: #fff;
+}
+
+/* Main section */
+.subsection {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #f8c291, #6a89cc);
+}
+
+.foreman h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.foreman img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Driver details */
+.main-detailes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.user-detailes {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Buttons */
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.user-cart {
+  background-color: #e74c3c;
+}
+
+.user-cart:hover {
+  background-color: #c0392b;
+}
+
+/* Footer styles */
+.Footer {
+  background-color: #34495e;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .foreman h2 {
+    font-size: 2rem;
+  }
+  
+  .user-detailes {
+    max-width: 100%;
+  }
+}
