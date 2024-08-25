@@ -15,7 +15,7 @@ const Plumbers = () => {
     <Navbar/>
      <div className="subsection">
       <div className="foreman">
-      <h3>Hello User!! Find Your Electrician Here</h3>
+      <h3>Hello User!! Find Your Plumber Here</h3>
       <h3> At Your Loaction in 5 mins</h3>
       <img src={plumber_img} alt="" />
       <div className="main-detailes">
