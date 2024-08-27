@@ -1,42 +1,76 @@
 /* General Hero Styles */
 .hero-container {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f8f9fa;
-    color: #333;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.hero-container h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #ff6f61; /* Matches the theme of the navbar */
+}
+
+.hero-container .hero-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.hero-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-container .hero-cta {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hero-container .hero-cta:hover {
+  background-color: #e65550;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 50px 15px;
   }
-  
+
   .hero-container h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #ff6f61; /* Matches the theme of the navbar */
+    font-size: 32px;
   }
-  
-  .hero-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .hero-container .hero-subtitle {
+    font-size: 16px;
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .hero-container {
-      padding: 30px 15px;
-    }
-  
-    .hero-container h1 {
-      font-size: 28px;
-    }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 40px 10px;
   }
-  
-  @media (max-width: 480px) {
-    .hero-container {
-      padding: 20px 10px;
-    }
-  
-    .hero-container h1 {
-      font-size: 24px;
-    }
+
+  .hero-container h1 {
+    font-size: 28px;
   }
-  
+
+  .hero-container .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .hero-container .hero-cta {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

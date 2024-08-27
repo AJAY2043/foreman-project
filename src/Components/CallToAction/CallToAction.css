@@ -1,0 +1,53 @@
+.call-to-action {
+    background-color: #ff6b6b;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cta-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #222;
+  }
+  
+  /* Responsive Design */
+  
+  @media (min-width: 768px) {
+    .cta-title {
+      font-size: 3rem;
+    }
+  
+    .cta-description {
+      font-size: 1.5rem;
+    }
+  
+    .cta-button {
+      font-size: 1.5rem;
+    }
+  }
+  

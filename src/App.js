@@ -20,6 +20,8 @@ import DomesticWorkersSingle from './Singles/DomesticWorkersSingle';
 import PlumberSingle from './Singles/PlumberSingle';
 import WelderSingle from './Singles/WelderSingle';
 import Cart from './Components/Cart/Cart';
+import User from './Components/Users/User';
+import StoriesPage from './Components/SuccessStories/StoriesPage';
 
 
 function App() {
@@ -31,7 +33,9 @@ function App() {
             <Route path='/login' element={<LoginSignUp/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/contactus' element={<Contactus/>}/>
-    
+            <Route path='/usersregistration' element={<User/>}/>
+            <Route path='/userstories' element={<StoriesPage/>}/>
+
             <Route path='/drivers' element={<Drivers/>}/>
                <Route path='/drivers/:name' element={<DriverSingle/>}/>
             <Route path='/mechanics' element={<Mechanics/>}/>

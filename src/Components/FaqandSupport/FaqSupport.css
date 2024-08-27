@@ -1,0 +1,114 @@
+.faq-support {
+    padding: 60px 20px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .faq-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto 60px;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  .faq-question {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: relative; /* Allows absolute positioning of the arrow */
+  }
+  
+  .faq-question::after {
+    content: ''; /* Clear content */
+    display: inline-block;
+    width: 16px; /* Adjust size */
+    height: 16px; /* Adjust size */
+    background: url('../Assets/dropdown_icon.png') no-repeat center center; /* Set image */
+    background-size: contain; /* Adjust image size */
+    position: absolute;
+    right: 15px; /* Position from the right */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s; /* Smooth transition */
+  }
+  
+  .faq-question.active::after {
+    transform: translateY(-50%) rotate(180deg); /* Rotate the arrow when active */
+  }
+  
+  .faq-question:hover {
+    background-color: #e4e4e4;
+  }
+  
+  .faq-answer {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #ff6b6b;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .support-section {
+    text-align: center;
+  }
+  
+  .support-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .support-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .support-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .support-button:hover {
+    background-color: #222;
+  }
+  
+  /* Responsive Design */
+  
+  @media (min-width: 768px) {
+    .faq-title, .support-title {
+      font-size: 3rem;
+    }
+  
+    .faq-question {
+      font-size: 1.8rem;
+    }
+  
+    .faq-answer {
+      font-size: 1.2rem;
+    }
+  
+    .support-description {
+      font-size: 1.5rem;
+    }
+  
+    .support-button {
+      font-size: 1.5rem;
+    }
+  }
+  

@@ -40,6 +40,7 @@ const LoginSignUp = ({ onLogin }) => {
       onLogin(); // Log the user in after successful sign-up
     } catch (error) {
       console.error('Error registering user:', error);
+      setError('An error occurred while registering');
     }
   };
 
@@ -67,10 +68,10 @@ const LoginSignUp = ({ onLogin }) => {
   return (
     <>
       <Navbar />
-      <div className='loginsignup'>
-        <div className="loginsignup-container">
-          <h1>{isSignUp ? 'SignUp' : 'Login'}</h1>
-          <div className="loginsignup-fields">
+      <div className='login-signup'>
+        <div className="login-signup-container">
+          <h1>{isSignUp ? 'Sign Up' : 'Login'}</h1>
+          <div className="login-signup-fields">
             {isSignUp && (
               <input
                 type='text'
@@ -106,9 +107,9 @@ const LoginSignUp = ({ onLogin }) => {
           </div>
           {error && <p className='error-message'>{error}</p>}
           <button onClick={isSignUp ? handleSignUp : handleLogin}>
-            {isSignUp ? 'Continue' : 'Login'}
+            {isSignUp ? 'Sign Up' : 'Login'}
           </button>
-          <p className='loginsignup-login'>
+          <p className='login-signup-toggle'>
             {isSignUp
               ? 'Already have an account?'
               : "Don't have an account?"}{' '}
@@ -117,9 +118,9 @@ const LoginSignUp = ({ onLogin }) => {
             </span>
           </p>
           {isSignUp && (
-            <div className="loginsignup-agree">
-              <input type='checkbox' name='' id='' />
-              <p>By continuing, I agree to the terms of use & privacy policy</p>
+            <div className="login-signup-agree">
+              <input type='checkbox' id='agree' />
+              <label htmlFor='agree'>By continuing, I agree to the terms of use & privacy policy</label>
             </div>
           )}
         </div>
