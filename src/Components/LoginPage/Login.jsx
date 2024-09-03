@@ -12,7 +12,6 @@ const LoginSignUp = ({ onLogin }) => {
     password: '',
     confirmPassword: '',
   });
-
   const [error, setError] = useState('');
 
   const handleInputChange = (e) => {
@@ -23,45 +22,47 @@ const LoginSignUp = ({ onLogin }) => {
     });
   };
 
-  const handleSignUp = async () => {
-    if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match!');
-      return;
-    }
-    setError('');
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission
 
-    try {
-      await axios.post('https://react-foreman-default-rtdb.firebaseio.com/users.json', {
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-      });
-      alert('User registered successfully');
-      onLogin(); // Log the user in after successful sign-up
-    } catch (error) {
-      console.error('Error registering user:', error);
-      setError('An error occurred while registering');
-    }
-  };
-
-  const handleLogin = async () => {
-    try {
-      const response = await axios.get('https://react-foreman-default-rtdb.firebaseio.com/users.json');
-      const users = response.data;
-
-      const foundUser = Object.values(users).find(
-        user => user.email === formData.email && user.password === formData.password
-      );
-
-      if (foundUser) {
-        alert('Login successful!');
-        onLogin(); // Log the user in after successful login
-      } else {
-        setError('Invalid email or password');
+    if (isSignUp) {
+      if (formData.password !== formData.confirmPassword) {
+        setError('Passwords do not match!');
+        return;
       }
-    } catch (error) {
-      console.error('Error logging in:', error);
-      setError('An error occurred while trying to log in');
+      setError('');
+
+      try {
+        await axios.post('https://react-foreman-default-rtdb.firebaseio.com/users.json', {
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+        });
+        alert('User registered successfully');
+        onLogin(); // Log the user in after successful sign-up
+      } catch (error) {
+        console.error('Error registering user:', error);
+        setError('An error occurred while registering');
+      }
+    } else {
+      try {
+        const response = await axios.get('https://react-foreman-default-rtdb.firebaseio.com/users.json');
+        const users = response.data;
+
+        const foundUser = Object.values(users).find(
+          (user) => user.email === formData.email && user.password === formData.password
+        );
+
+        if (foundUser) {
+          alert('Login successful!');
+          onLogin(); // Log the user in after successful login
+        } else {
+          setError('Invalid email or password');
+        }
+      } catch (error) {
+        console.error('Error logging in:', error);
+        setError('An error occurred while trying to log in');
+      }
     }
   };
 
@@ -71,7 +72,7 @@ const LoginSignUp = ({ onLogin }) => {
       <div className='login-signup'>
         <div className="login-signup-container">
           <h1>{isSignUp ? 'Sign Up' : 'Login'}</h1>
-          <div className="login-signup-fields">
+          <form className="login-signup-fields" onSubmit={handleSubmit} autoComplete='off'>
             {isSignUp && (
               <input
                 type='text'
@@ -79,6 +80,7 @@ const LoginSignUp = ({ onLogin }) => {
                 placeholder='Your Name'
                 value={formData.name}
                 onChange={handleInputChange}
+                aria-invalid={error && !formData.name ? 'true' : 'false'}
               />
             )}
             <input
@@ -87,6 +89,7 @@ const LoginSignUp = ({ onLogin }) => {
               placeholder='Email'
               value={formData.email}
               onChange={handleInputChange}
+              aria-invalid={error && !formData.email ? 'true' : 'false'}
             />
             <input
               type='password'
@@ -94,6 +97,7 @@ const LoginSignUp = ({ onLogin }) => {
               placeholder='Password'
               value={formData.password}
               onChange={handleInputChange}
+              aria-invalid={error && !formData.password ? 'true' : 'false'}
             />
             {isSignUp && (
               <input
@@ -102,27 +106,28 @@ const LoginSignUp = ({ onLogin }) => {
                 placeholder='Confirm Password'
                 value={formData.confirmPassword}
                 onChange={handleInputChange}
+                aria-invalid={error && !formData.confirmPassword ? 'true' : 'false'}
               />
             )}
-          </div>
-          {error && <p className='error-message'>{error}</p>}
-          <button onClick={isSignUp ? handleSignUp : handleLogin}>
-            {isSignUp ? 'Sign Up' : 'Login'}
-          </button>
-          <p className='login-signup-toggle'>
-            {isSignUp
-              ? 'Already have an account?'
-              : "Don't have an account?"}{' '}
-            <span onClick={() => setIsSignUp(!isSignUp)}>
-              {isSignUp ? 'Login Here' : 'Sign Up Here'}
-            </span>
-          </p>
-          {isSignUp && (
-            <div className="login-signup-agree">
-              <input type='checkbox' id='agree' />
-              <label htmlFor='agree'>By continuing, I agree to the terms of use & privacy policy</label>
-            </div>
-          )}
+            {error && <p className='error-message'>{error}</p>}
+            <button type='submit'>{isSignUp ? 'Sign Up' : 'Login'}</button>
+            <p className='login-signup-toggle'>
+              {isSignUp
+                ? 'Already have an account?'
+                : "Don't have an account?"}{' '}
+              <span onClick={() => setIsSignUp(!isSignUp)}>
+                {isSignUp ? 'Login Here' : 'Sign Up Here'}
+              </span>
+            </p>
+            {isSignUp && (
+              <div className="login-signup-agree">
+                <input type='checkbox' id='agree' required />
+                <label htmlFor='agree'>
+                  By continuing, I agree to the <a href='/terms' target='_blank' rel='noopener noreferrer'>terms of use</a> & <a href='/privacy' target='_blank' rel='noopener noreferrer'>privacy policy</a>
+                </label>
+              </div>
+            )}
+          </form>
         </div>
       </div>
       <Footer />

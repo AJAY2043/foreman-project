@@ -22,6 +22,7 @@ import WelderSingle from './Singles/WelderSingle';
 import Cart from './Components/Cart/Cart';
 import User from './Components/Users/User';
 import StoriesPage from './Components/SuccessStories/StoriesPage';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 
 
 function App() {
@@ -52,6 +53,9 @@ function App() {
                 <Route path='/plumbers/:name' element={<PlumberSingle/>}/>
             <Route path='/welders' element={<Welders/>}/>
                 <Route path='/welders/:name' element={<WelderSingle/>}/>
+          
+            <Route path='*' element={<ErrorPage/>}/>
+          
           </Routes>
       </BrowserRouter>
     </div>

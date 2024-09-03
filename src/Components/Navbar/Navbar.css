@@ -30,13 +30,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.user, .favorites, .detailes {
+.user, .favorites, .details {
   color: #ffffff; /* White color for text */
   margin: 10px;
   cursor: pointer;
 }
 
-.user h3, .favorites h2, .detailes h3 {
+.user h3, .favorites h2, .details h3 {
   margin: 0;
   font-size: 18px;
 }
@@ -90,7 +90,7 @@
     width: 150px;
   }
 
-  .user h3, .favorites h2, .detailes h3 {
+  .user h3, .favorites h2, .details h3 {
     font-size: 16px;
   }
 
@@ -122,7 +122,7 @@
     margin-top: 10px;
   }
 
-  .user, .favorites, .detailes {
+  .user, .favorites, .details {
     width: 100%;
     text-align: left;
     margin: 5px 0;
@@ -156,4 +156,31 @@
   .sub-nav li:hover {
     background-color: #ff4a3c; /* Slightly darker background on hover */
   }
+}
+.search-results {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.search-result-item img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.search-result-item:hover {
+  background-color: #f0f0f0;
 }

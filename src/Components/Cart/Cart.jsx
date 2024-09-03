@@ -15,7 +15,8 @@ const Cart = () => {
       <div className="cart-container">
         <h1>Favorites</h1>
         {cart.length === 0 ? (
-          <p>Your Favorites is empty.</p>
+          <p style={{ color: 'red' }}>Your Favorites is empty.</p>
+
         ) : (
           <ul className="cart-list">
             {cart.map((item, index) => (

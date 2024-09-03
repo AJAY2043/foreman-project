@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
-import { useCart } from '../../Context/CartContext'; // Import the useCart hook
+import { Link, useNavigate } from 'react-router-dom';
+import { useCart } from '../../Context/CartContext';
 
 // Importing icons for categories
 import driverIcon from '../Assets/Drivers=logos.png';
@@ -15,6 +15,33 @@ import welderIcon from '../Assets/welder-logo.jpg';
 
 const Navbar = () => {
   const { cart } = useCart(); // Access cart from context
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const categories = [
+    { name: 'Drivers', path: '/drivers', icon: driverIcon },
+    { name: 'Mechanics', path: '/mechanics', icon: mechanicIcon },
+    { name: 'Electricians', path: '/electricians', icon: electricianIcon },
+    { name: 'Transporters', path: '/transporters', icon: transporterIcon },
+    { name: 'Commercial Workers', path: '/commercialworkers', icon: commercialWorkerIcon },
+    { name: 'Domestic Workers', path: '/domesticworkers', icon: domesticWorkerIcon },
+    { name: 'Plumbers', path: '/plumbers', icon: plumberIcon },
+    { name: 'Welders', path: '/welders', icon: welderIcon },
+  ];
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleResultClick = (path) => {
+    navigate(path);
+    setSearchQuery(''); // Clear search input after navigation
+  };
+
+  const filteredCategories = categories.filter(category =>
+    category.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+  );
+
   return (
     <div className='navsection'>
       <div className="main-nav">
@@ -24,7 +51,26 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="search">
-          <input type='text' placeholder='Search...' />
+          <input
+            type='text'
+            placeholder='Search...'
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+          {searchQuery && (
+            <div className="search-results">
+              {filteredCategories.map((category) => (
+                <div
+                  key={category.name}
+                  className="search-result-item"
+                  onClick={() => handleResultClick(category.path)}
+                >
+                  <img src={category.icon} alt={category.name} />
+                  <span>{category.name}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <div className="user">
           <Link style={{ textDecoration: 'none', color: 'white' }} to='/login'>
@@ -45,30 +91,11 @@ const Navbar = () => {
       <div className="subnav">
         <div className="sub-nav">
           <ul>
-            <Link style={{ textDecoration: 'none' }} to='/drivers'>
-              <li><img src={driverIcon} alt="Drivers" />Drivers</li>
-            </Link>
-            <Link style={{ textDecoration: 'none' }} to='/mechanics'>
-              <li><img src={mechanicIcon} alt="Mechanics" />Mechanics</li>
-            </Link>
-            <Link style={{ textDecoration: 'none' }} to='/electricians'>
-              <li><img src={electricianIcon} alt="Electricians" />Electricians</li>
-            </Link>
-            <Link style={{ textDecoration: 'none' }} to='/transporters'>
-              <li><img src={transporterIcon} alt="Transporters" />Transporters</li>
-            </Link>
-            <Link style={{ textDecoration: 'none' }} to='/commercialworkers'>
-              <li><img src={commercialWorkerIcon} alt="Commercial Workers" />Commercial Workers</li>
-            </Link>
-            <Link style={{ textDecoration: 'none' }} to='/domesticworkers'>
-              <li><img src={domesticWorkerIcon} alt="Domestic Workers" />Domestic Workers</li>
-            </Link>
-            <Link style={{ textDecoration: 'none' }} to='/plumbers'>
-              <li><img src={plumberIcon} alt="Plumbers" />Plumbers</li>
-            </Link>
-            <Link style={{ textDecoration: 'none' }} to='/welders'>
-              <li><img src={welderIcon} alt="Welders" />Welders</li>
-            </Link>
+            {categories.map(category => (
+              <Link key={category.name} style={{ textDecoration: 'none' }} to={category.path}>
+                <li><img src={category.icon} alt={category.name} />{category.name}</li>
+              </Link>
+            ))}
           </ul>
         </div>
       </div>
